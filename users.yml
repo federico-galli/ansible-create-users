@@ -1,7 +1,10 @@
 ---
 users:
-  - username: maruna
-    use_sudo: no
+  - username: giuseppe.lopresti
+    use_sudo: yes
 
-  - username: jaroslav
+  - username: fabio.cazzavillan
+    use_sudo: yes
+
+  - username: stefano.muschera
     use_sudo: yes
