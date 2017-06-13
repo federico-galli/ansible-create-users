@@ -14,15 +14,14 @@ User Settings
 Distros tested
 ------------
 
-Currently, this is only tested on Ubuntu 14.04 as a client and server machine. It should theoretically work on older versions of Ubuntu or Debian based systems.
+Works on every machine were Ansible works.
 
 Usage
 ------------
-- install ansible
-- create keys
-- configure client server authorized_keys
-- upload repository and change
-- run command
+- Install Ansible
+- Create keys
+- Configure users and provide authorized_keys
+- Run
 
 ```
 ansible-playbook -i hosts create_users.yml
