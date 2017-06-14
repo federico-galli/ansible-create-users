@@ -15,7 +15,7 @@
   - include_vars: users.yml
 
   - name: Add Users
-    user: name={{ item.username }} shell=/bin/bash createhome=yes comment='Created with Ansible'
+    user: name={{ item.username }} shell=/bin/bash groups=apache,nginx,wheel,users createhome=yes comment='Created with Ansible'
     with_items: '{{users}}'
 
   - name: Upload SSH Authorized Keys
