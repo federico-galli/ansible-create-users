@@ -1,0 +1,25 @@
+---
+- hosts: all
+  remote_user: blackman
+  become: true
+  become_user: root
+
+#  vars:
+#    users:
+#      - username: gino
+#      - newowner: pilotino
+#      - newgroup: pilots
+#      - username: doffy
+#      - newowner: rufy
+#      - newgroup: pirates
+
+  tasks:
+  - include_vars: chown.yml
+
+  - name: Switch ownership
+    shell: chown -R --from={{ item.username }} {{ item.newowner }}:{{ item.newgroup }} /www/docs/*
+    with_items: '{{chown}}'
+
+  - name: Remove user
+    user: name={{ item.username }} state=absent remove=yes
+    with_items: '{{chown}}'
